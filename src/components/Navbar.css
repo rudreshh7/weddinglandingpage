@@ -1,0 +1,10 @@
+nav{
+  padding: 1.5rem;
+}
+.nav-list{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 18px;
+  color: #8C916C;
+}
+

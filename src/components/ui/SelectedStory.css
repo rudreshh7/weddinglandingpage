@@ -1,0 +1,50 @@
+.selected-story{
+  display: flex;
+  padding-inline:4rem;
+}
+
+.story-left{
+  padding-inline: 4rem;
+  
+}
+
+.story-left img{
+  width: 400px;
+}
+.story-right{
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  
+}
+
+.story-right h3{
+  font-size:2rem;
+  color: #8C916C;
+  font-weight:50;
+}
+
+.story-right p{
+  color: #8C916C;
+}
+.story-right button{
+  all: unset;
+  border-bottom: 1px solid #8C916C;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  cursor:pointer;
+  
+}
+
+.story-image {
+  width: 400px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

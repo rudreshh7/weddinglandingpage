@@ -1,0 +1,41 @@
+.home-art{
+  position: relative;
+}
+
+.home-art-left{
+  position: absolute;
+
+}
+.home-art-left{
+  position: absolute;
+
+}
+.home-art-right{
+  position: absolute;
+  right: 0;
+  top: 0;
+
+}
+.home-art-writeup{
+  max-width:200px;
+  margin: 0 auto;
+  color: #8C916C;
+
+}
+
+.home-art-writeup p {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #8C916C;
+
+}
+
+.home-art-writeup p:first-of-type{
+  margin-bottom: 100px;
+}
+
+
+.home-art-writeup p:last-of-type{
+
+}
+

@@ -1,0 +1,31 @@
+.service-card{
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+}
+
+.servicecard-img img{
+  width: 100px;
+}
+.servicecard-title p {
+  font-weight: bold;
+  color: #8C916C;
+
+
+}
+
+.servicecard-desc p{
+  font-size: small;
+    color: #8C916C;
+
+
+}
+
+
+
+
