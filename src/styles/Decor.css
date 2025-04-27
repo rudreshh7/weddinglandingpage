@@ -1,0 +1,111 @@
+.decor-banner {
+  background-image: url('/images/aboutus/aboutusbanner.png');
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.decor-heading {
+  font-size: 24px;
+  color:#8C916C;
+  text-align: center;
+  padding-bottom: 2rem;
+  margin: 2rem;
+  
+}
+
+.decor-main-writeup{
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  color: #8C916C;
+}
+
+.decor-writeup{
+  max-width: 50%;
+}
+
+/* Decor Themes */
+.themes-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.themes-item{
+  align-items: center;
+}
+
+.themes-item img{
+  width: 300px;
+
+}
+
+.themes-item h3{
+  text-align: center;
+  color: #8C916C;
+}
+
+.decor-writeup-end{
+display: flex;
+color: #8C916C;
+text-align: center;
+max-width: 80%;
+margin: 0 auto;
+padding: 4rem;
+}
+
+/* What we provide */
+
+.decor-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 30px;
+}
+
+/* .decor-image img {
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+} */
+
+.decor-text {
+  max-width: 600px;
+  text-align: center;
+}
+
+.decor-text h2 {
+  font-size: 30px;
+  color:#8C916C;
+  margin-bottom: 20px;
+}
+
+.decor-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.decor-text li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #8C916C;
+  line-height: 1.5;
+}
+
+
+.decorend-heading {
+  font-size: 24px;
+  color:#8C916C;
+  text-align: center;
+  padding-bottom: 2rem;
+  margin: 2rem;
+  
+}

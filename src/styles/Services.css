@@ -1,0 +1,14 @@
+.ourservices-banner {
+  background-image: url('/images/aboutus/aboutusbanner.png');
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+
+.services-list{
+  display: flex;
+}

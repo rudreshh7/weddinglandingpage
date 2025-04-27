@@ -21,7 +21,7 @@ const ImageGallery = () => {
   };
 
   return (
-    <div className="gallery-container">
+    <div className="carousel-container">
       <div key={index} className="image-row fade-animation">
         {images[index].map((imgSrc, i) => (
           <img
