@@ -138,7 +138,7 @@ const About = () => {
   };
   const teamMembers = [
     {
-      name: "Shezerine Udwadia",
+      name: "Shehzarin Udwadia",
       role: "Founder & Lead Wedding Planner",
       image: "/images/aboutus/teammain1.jpg", // replace with correct path
     },
