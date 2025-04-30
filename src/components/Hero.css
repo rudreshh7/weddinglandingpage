@@ -77,3 +77,20 @@
     opacity: 1;
   }
 }
+
+
+@media (max-width: 768px) {
+
+  .hero-container{
+    position: relative;
+    min-height:20rem;
+    
+  }
+  
+.hero-text-area{
+  display: none;
+ 
+}
+
+}
+
