@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Hero from "../components/Hero";
 import HomeArt from "../components/ui/HomeArt";
 import "../styles/Home.css";
-import ServiceCard from "../components/ui/ServiceCard";
-import creative from "../assets/icons/creative.svg";
-import planning from "../assets/icons/attire.svg";
-import decor from "../assets/icons/decor.svg";
-import concept from "../assets/icons/concept.svg";
-import food from "../assets/icons/food.svg";
-import video from "../assets/icons/video.svg";
 
 import SelectedStory from "../components/ui/SelectedStory";
 import ImageGallery from "../components/ui/ImageGallery";
@@ -17,126 +10,172 @@ import FAQSection from "../components/ui/FAQSection";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const services = [
-    {
-      icon: creative,
-      title: "CREATIVE CONCEPT",
-      description:
-        "Our wedding organizers bring your dream wedding concept to life from thematic decorations to innovative layouts.",
-    },
-    {
-      icon: planning,
-      title: "EVENT PLANNING",
-      description:
-        "We handle logistics and vendor coordination to ensure your event runs smoothly from start to finish.",
-    },
-    {
-      icon: decor,
-      title: "FLORAL & DECOR",
-      description:
-        "From lush floral arrangements to elegant decor, we design spaces that reflect your unique style.",
-    },
-    {
-      icon: concept,
-      title: "CREATIVE CONCEPT",
-      description:
-        "Our wedding organizers bring your dream wedding concept to life from thematic decorations to innovative layouts.",
-    },
-    {
-      icon: food,
-      title: "EVENT PLANNING",
-      description:
-        "We handle logistics and vendor coordination to ensure your event runs smoothly from start to finish.",
-    },
-    {
-      icon: video,
-      title: "FLORAL & DECOR",
-      description:
-        "From lush floral arrangements to elegant decor, we design spaces that reflect your unique style.",
-    },
-  ];
-
   return (
     <div>
       <Hero />
       {/* Writeup */}
-      <div class="founder-note">
-        <div class="vertical-line"></div>
-
-        <p class="founder-heading">
-          WITH YEARS OF EXPERTISE IN WEDDING PLANNING, WE DEDICATED TO CREATING
-          BEAUTIFULLY ORCHESTRATED EXPERIENCES.
+      <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
+      <div className="founder-note">
+        <p className="founder-heading">
+          YEARS OF MASTERING THE ART OF WEDDING MAGIC — CURATING MEMORIES THAT
+          LAST FOREVER.
         </p>
-        <p class="founder-description">
-          At Double S Enterprises, we don’t just design weddings — we curate
-          unforgettable experiences. Every element, from exquisite mandaps and
-          lush floral arrangements to bespoke wedding favors, is thoughtfully
-          crafted to reflect your unique story.
+        <p className="founder-description">
+          At Double S Enterprises, every wedding we design is a symphony of
+          love, luxury, and personalization. From lavish mandaps adorned with
+          handpicked blooms to curated gourmet experiences, we turn
+          once-in-a-lifetime dreams into tangible reality.
         </p>
       </div>
       <HomeArt />
-      {/* Our Services */}
 
-      <div className="home-services">
-        <h6 className="services-heading">Our Services</h6>
-
-        {/* <ServiceCard /> */}
-        <div className="services-list">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </div>
+      <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
+      {/* Writeup */}
+      <div>
+        <p className="end-writeup">
+          Every couple is unique, and so should be their celebration. We bring
+          artistry, precision, and heartfelt passion to ensure your special day
+          is an unforgettable masterpiece.
+        </p>
       </div>
       {/* Selected Stories */}
       <div className="selected-stories">
-        <h6 className="stories-heading">Selected Stories</h6>
+        <h6 className="stories-heading">Moments we made magical</h6>
         <SelectedStory />
       </div>
-
+      <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
       {/* Writeup */}
       <div>
         <p className="end-writeup">
-          We are true romantics at heart. We know when it comes to the matter of
-          the heart, and that to for an occasion like weddings, we would have
-          wanted the best for ourselves. And that’s the promise we go out with.
-          Deliver the best and make dreams come true.
+          Love deserves to be celebrated in ways that feel personal and
+          profound. Our bespoke wedding designs and flawless execution make sure
+          your journey to forever begins beautifully.
         </p>
       </div>
 
-      {/* Image Carousel   */}
+      <div className="venue-card">
+        <div className="venue-image">
+          <img src="/images/whychoose.jpg" alt="Wedding venue" />
+        </div>
+        <div className="venue-content">
+          <h2>Why Choose Double S Enterprises?</h2>
+          <p>
+            At Double S Enterprises, we turn your dreams into reality with
+            creativity, passion, and precision.
+          </p>
+          <ul>
+            <li>
+              • Tailored to You: Every event is uniquely designed to reflect
+              your story.
+            </li>
+            <li>
+              • Creative and Elegant: We specialize in breathtaking, timeless
+              decor.
+            </li>
+            <li>
+              • Stress-Free Planning: We manage every detail so you can focus on
+              making memories.
+            </li>
+            <li>
+              • Global Expertise: Based in Mumbai, we plan weddings across India
+              and worldwide.
+            </li>
+            <li>
+              • Passionate Team: We are committed to bringing heart, style, and
+              excellence to every celebration.
+            </li>
+          </ul>
+          <p>With us, your dream day is in trusted hands.</p>
+        </div>
+      </div>
+      {/* Image Carousel */}
       <div>
-        <h6 className="imagecarousel-heading">Recent Memories</h6>
+        <h6 className="imagecarousel-heading"> see what we are upto </h6>
         <ImageGallery />
       </div>
-
+      <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
       {/* Writeup */}
       <div>
         <p className="end-writeup">
-          We are true romantics at heart. We know when it comes to the matter of
-          the heart, and that to for an occasion like weddings, we would have
-          wanted the best for ourselves. And that’s the promise we go out with.
-          Deliver the best and make dreams come true.
+          Welcome to <strong>Double S Enterprises</strong>
+          <br />
+          <em>Where Every Celebration Becomes a Dream Come True</em>
+          <br />
+          <br />
+          At Double S Enterprises, we believe every love story deserves to be
+          celebrated with beauty, elegance, and heart. Specializing in wedding
+          planning and bespoke decor, we craft unforgettable experiences
+          tailored to your unique vision. From romantic pastel setups to grand
+          floral displays, our team brings creativity, passion, and meticulous
+          attention to detail into every event we design.
+          <br />
+          <br />
+          Whether you dream of an intimate ceremony or a lavish celebration,
+          Double S Enterprises is here to bring your vision to life seamlessly,
+          gracefully, and with a touch of magic.
+          <br />
+          <br />
+          Let us handle the details while you focus on making memories that will
+          last a lifetime.
+          <br />
+          <br />
+          <strong>Your dream day starts here.</strong>
+          <br />
+          <em>Let’s create something unforgettable.</em>
         </p>
       </div>
 
-      {/* Testinomials */}
+      {/* Testimonials */}
       <div>
-        <h6 className="imagecarousel-heading">Hear from our clients</h6>
-
+        <h6 className="imagecarousel-heading"> Client Testimonials</h6>
         <Testinomials />
       </div>
+      {/* <h6 className="imagecarousel-heading">
+        Why Choose Double S Enterprises?
+      </h6> */}
 
+      {/* 
+      <div className="venue-card">
+        <div className="venue-image">
+          <img
+            src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Wedding venue"
+          />
+        </div>
+        <div className="venue-content">
+          <h2>What Makes Us Different?</h2>
+          <p>
+            At Double S Enterprises, we don’t just plan events—we create
+            unforgettable experiences.
+          </p>
+          <ul>
+            <li>• Tailored Designs: We bring your unique vision to life.</li>
+            <li>
+              • Global Reach: Serving clients worldwide with seamless
+              destination weddings.
+            </li>
+            <li>
+              • Passion for Perfection: Creative, meticulous, and focused on
+              excellence.
+            </li>
+            <li>
+              • Complete Service: From decor to vendor coordination, we handle
+              it all.
+            </li>
+          </ul>
+          <p>Your dream event, perfectly executed.</p>
+        </div>
+      </div> */}
       {/* FAQ Section */}
       <div>
-        <h6 className="imagecarousel-heading">Frequently asked questions</h6>
-
+        <h6 className="imagecarousel-heading">Frequently Asked Questions</h6>
         <FAQSection />
       </div>
+
+      <p className="founder-heading">
+        YEARS OF MASTERING THE ART OF WEDDING MAGIC — CURATING MEMORIES THAT
+        LAST FOREVER.
+      </p>
       <Footer />
     </div>
   );

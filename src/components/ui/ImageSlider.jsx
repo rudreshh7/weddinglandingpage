@@ -7,7 +7,7 @@ import {
   CircleHalf,
 } from "@phosphor-icons/react";
 
-const ImageSlider = ({ imageUrls }) => {
+const ImageSlider = ({ imageUrls, textContent }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isAutoSliding, setIsAutoSliding] = useState(true);
   const slideInterval = useRef(null);
@@ -51,51 +51,36 @@ const ImageSlider = ({ imageUrls }) => {
   }
 
   return (
-    <div style={{ width: "100%", height: "100%", position: "relative" }}>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          overflow: "hidden",
-        }}
-      >
+    <div className="img-slider-container">
+      <div className="img-slider-wrapper">
         {imageUrls.map((url, index) => (
-          <img
+          <div
             key={url}
-            src={url}
-            alt="slider"
-            className="img-slider-img"
+            className="slide-container"
             style={{ translate: `${-100 * imageIndex}%` }}
-          />
+          >
+            <img
+              src={url}
+              alt={`slide ${index + 1}`}
+              className="img-slider-img"
+            />
+            {textContent && textContent[index] && (
+              <div className="slide-text-overlay">
+                <div className="slide-text">{textContent[index]}</div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
-      <button
-        onClick={showPrevImage}
-        className="img-slider-btn"
-        style={{ left: 0 }}
-      >
+      <button onClick={showPrevImage} className="img-slider-btn prev-btn">
         <ArrowLeft size={10} color="#8C916C" weight="fill" />
       </button>
-      <button
-        onClick={showNextImage}
-        className="img-slider-btn"
-        style={{ right: 0 }}
-      >
+      <button onClick={showNextImage} className="img-slider-btn next-btn">
         <ArrowRight size={10} color="#8C916C" weight="fill" />
       </button>
 
-      <div
-        style={{
-          position: "absolute",
-          bottom: ".5rem",
-          left: "50%",
-          translate: "-50%",
-          display: "flex",
-          gap: ".25rem",
-        }}
-      >
+      <div className="img-slider-dots">
         {imageUrls.map((_, index) => (
           <button
             className="img-slider-dot-btn"

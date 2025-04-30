@@ -12,7 +12,7 @@ const Plan = () => {
       {" "}
       <div className="plan-banner">
         <div className="overlay">
-          <h1>WEDDING PLAN</h1>
+          <h1>Wedding Planning</h1>
         </div>
       </div>
       {/* Writeup */}
@@ -112,22 +112,25 @@ const Plan = () => {
         <div className="service-card">
           <h2>CONSULTATION</h2>
           <p>
-            Uncover the artistry behind the magic of your wedding day from the
-            initial consultation to the final dance.
+            From your very first vision board to tailored vendor suggestions,
+            our consultation sessions craft a personalized blueprint for your
+            perfect day — turning your dreams into a detailed plan.
           </p>
         </div>
         <div className="service-card">
           <h2>COORDINATION</h2>
           <p>
-            Uncover the artistry behind the magic of your wedding day from the
-            initial consultation to the final dance.
+            On the big day, our expert coordinators seamlessly connect every dot
+            — synchronizing vendors, guests, and schedules so that you simply
+            bask in the joy without worrying about the details.
           </p>
         </div>
         <div className="service-card">
           <h2>EXECUTION</h2>
           <p>
-            Uncover the artistry behind the magic of your wedding day from the
-            initial consultation to the final dance.
+            Watch your vision unfold flawlessly as our team orchestrates every
+            element, from the grand entrance to the final toast — ensuring an
+            effortless, unforgettable celebration.
           </p>
         </div>
       </div>

@@ -4,7 +4,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Libre Baskerville", serif;
+
 }
 
 .faq-title {
@@ -56,3 +57,19 @@
   border-top: 1px solid #dcdcdc;
   font-size: 0.95rem;
 }
+
+
+.faq-answer a {
+  color: #5a7d5a;
+  text-decoration: underline;
+}
+
+.faq-answer ul, .faq-answer ol {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.faq-answer p {
+  margin-bottom: 0.75rem;
+}
+

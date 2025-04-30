@@ -4,15 +4,24 @@
 
 .home-art-left{
   position: absolute;
+  left: 15%;
 
 }
-.home-art-left{
-  position: absolute;
+.home-art-left img{
+width:300px;
 
 }
+
+.home-art-right img{
+
+  width:300px;
+
+}
+
+
 .home-art-right{
   position: absolute;
-  right: 0;
+  right:15%;
   top: 0;
 
 }
@@ -20,6 +29,7 @@
   max-width:200px;
   margin: 0 auto;
   color: #8C916C;
+  
 
 }
 
@@ -36,6 +46,26 @@
 
 
 .home-art-writeup p:last-of-type{
+
+}
+
+@media (max-width: 768px) {
+  .home-art-writeup{
+    max-width:200px;
+    margin: 0 auto; 
+    color: #8C916C;
+  
+  
+  }
+  .home-art-left{
+    display: none;
+  }
+  
+  .home-art-right{
+    display: none;
+
+  
+  }
 
 }
 

@@ -1,111 +1,221 @@
+/* Decor.css */
+
+/* Banner */
 .decor-banner {
-  background-image: url('/images/aboutus/aboutusbanner.png');
+  background-image: url('/images/decorbanner.jpg');
+  background-size: cover;
   background-position: center;
+  height: 60vh;
+  max-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
 }
 
+.overlay {
+  text-align: center;
+  color: white;
+}
+
+/* Headings */
 .decor-heading {
-  font-size: 24px;
-  color:#8C916C;
-  text-align: center;
-  padding-bottom: 2rem;
-  margin: 2rem;
-  
-}
-
-.decor-main-writeup{
-  display: flex;
-  justify-content: center;
-  gap: 6rem;
+  font-size: 1.5rem;
   color: #8C916C;
+  text-align: center;
+  padding: 0 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-.decor-writeup{
-  max-width: 50%;
-}
-
-/* Decor Themes */
-.themes-container{
+/* Main Writeup Section */
+.decor-main-writeup {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.themes-item{
+  justify-content: space-between;
   align-items: center;
+  padding: 2rem 5%;
+  gap: 2rem;
 }
 
-.themes-item img{
-  width: 300px;
-
-}
-
-.themes-item h3{
-  text-align: center;
+.decor-writeup {
+  flex: 1;
+  min-width: 300px;
   color: #8C916C;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.decor-writeup-end{
-display: flex;
-color: #8C916C;
-text-align: center;
-max-width: 80%;
-margin: 0 auto;
-padding: 4rem;
+.writeup-image {
+  flex: 1;
+  max-width: 500px;
 }
 
-/* What we provide */
+.writeup-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
+.hahadecor img{
+  width: 400px;
+}
+
+/* Themes Section */
+.themes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 5%;
+}
+
+.themes-item {
+  text-align: center;
+}
+
+.themes-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* What We Provide Section */
 .decor-section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 50px;
-  gap: 30px;
+  align-items: center;
+  padding: 2rem 5%;
+  gap: 2rem;
 }
 
-/* .decor-image img {
-  width: 250px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-} */
-
 .decor-text {
-  max-width: 600px;
-  text-align: center;
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
 }
 
 .decor-text h2 {
-  font-size: 30px;
-  color:#8C916C;
-  margin-bottom: 20px;
-}
-
-.decor-text ul {
-  list-style: none;
-  padding: 0;
+  font-size: 1.5rem;
+  color: #8C916C;
+  margin-bottom: 1.5rem;
 }
 
 .decor-text li {
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.decor-image {
+  flex: 0 0 25%;
+  max-width: 300px;
+}
+
+.decor-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem 5%;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-heading{
+  font-size: xx-large;
+  text-align: center;
+  padding: 2rem;
   color: #8C916C;
-  line-height: 1.5;
+  /* font-family: "Great Vibes", cursive; */
+
+
 }
 
 
-.decorend-heading {
-  font-size: 24px;
-  color:#8C916C;
-  text-align: center;
-  padding-bottom: 2rem;
-  margin: 2rem;
-  
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .decor-banner {
+    height: 40vh;
+  }
+
+  .decor-heading {
+    font-size: 1.2rem;
+    margin: 1.5rem auto;
+  }
+
+  .decor-main-writeup {
+    flex-direction: column;
+    padding: 1rem 5%;
+  }
+
+  .reverse-on-mobile {
+    flex-direction: column-reverse;
+  }
+
+  .decor-writeup {
+    min-width: auto;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .writeup-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .themes-container {
+    grid-template-columns: 1fr;
+  }
+
+  .themes-image {
+    height: 250px;
+  }
+
+  .decor-section {
+    flex-direction: column;
+  }
+
+  .decor-image.mobile-hidden {
+    display: none;
+  }
+
+  .decor-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .decor-banner {
+    height: 30vh;
+  }
+
+  .decor-heading {
+    font-size: 1rem;
+    margin: 1rem auto;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    height: 200px;
+  }
 }

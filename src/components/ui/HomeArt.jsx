@@ -8,28 +8,35 @@ const HomeArt = () => {
   return (
     <div className="home-art">
       <motion.div
-        initial={{ rotate: 0 }}
-        whileInView={{ rotate: -30 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ margin: "-200px" }}
         transition={{ duration: 1 }}
         className="home-art-left"
       >
         <img src={homeart1} alt="" />
       </motion.div>
+
       {/* WriteUp */}
-      <div className="home-art-writeup">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ margin: "-200px" }}
+        transition={{ duration: 1.2 }}
+        className="home-art-writeup"
+      >
         <p>Your Journey to flawless moments </p>
         <p>
           "A wedding is a work of art, created with love, care, and a touch of
           magic."
         </p>
-      </div>
+      </motion.div>
 
       <motion.div
-        initial={{ rotate: 0 }}
-        whileInView={{ rotate: 30 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ margin: "-200px" }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
         className="home-art-right"
       >
         <img src={homeart2} alt="" />

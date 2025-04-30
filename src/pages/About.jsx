@@ -1,25 +1,151 @@
 import React from "react";
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import "../styles/About.css";
-import decorImage from "/images/wedding2.png"; // Replace with actual path
+import decorImage from "/images/aboutus/about1.jpg"; // Replace with actual path
 import creative from "../assets/icons/creative.svg";
 import attire from "../assets/icons/attire.svg";
 import food from "../assets/icons/food.svg";
-import achievementsImage from "/images/wedding1.png";
+import achievementsImage from "/images/aboutus/about3.jpg";
 import coverone from "/images/aboutus/coverone.png";
 import covertwo from "/images/aboutus/cover2.png";
 import Footer from "../components/Footer";
 
 const About = () => {
+  const tableRows = [
+    { year: "2024", title: "Times applaud Trendsetters award" },
+    { year: "2023", title: "Wedding Sutra's Favourite" },
+    { year: "2023", title: "Innovating Wedding Design Award" },
+  ];
+  // Video Playback Controller
+  const videoRef = useRef(null);
+  const [isItVisible, setIsItVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsItVisible(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.5, // Play when 50% of the video is visible
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isItVisible) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isItVisible]);
+
+  // Number Animations Controller
+
+  const statsRef = useRef(null);
+  // State to track if the stats are visible
+  const [isVisible, setIsVisible] = useState(false);
+  // State for counting up the numbers
+  const [counts, setCounts] = useState({
+    couples: 0,
+    members: 0,
+    satisfaction: 0,
+  });
+
+  useEffect(() => {
+    // Create intersection observer to trigger animation when element is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Count-up animation effect
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2000; // Duration in ms
+    const interval = 20; // Update interval in ms
+    const steps = duration / interval;
+
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+
+      setCounts({
+        visits: Math.min(Math.floor((120 * step) / steps), 120),
+        couples: Math.min(Math.floor((250 * step) / steps), 250),
+        members: Math.min(Math.floor((15 * step) / steps), 15),
+        satisfaction: Math.min(Math.floor((95 * step) / steps), 95),
+      });
+
+      if (step >= steps) {
+        clearInterval(timer);
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [isVisible]);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      y: 20,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
   const teamMembers = [
     {
       name: "Shezerine Udwadia",
       role: "Founder & Lead Wedding Planner",
-      image: "/images/aboutus/person1.png", // replace with correct path
+      image: "/images/aboutus/teammain1.jpg", // replace with correct path
     },
     {
       name: "Shanaya Udwadia",
       role: "Vendor Logistics Coordinator",
-      image: "/images/aboutus/person2.png", // replace with correct path
+      image: "/images/aboutus/team1.jpg", // replace with correct path
     },
   ];
   return (
@@ -35,22 +161,24 @@ const About = () => {
         <div className="our-story-text">
           <h2>Our Story</h2>
           <p>
-            Embark on a journey with the dynamic mother-daughter duo, Shehzarìn
-            and Shanaya, whose collective expertise weaves an enchanting
-            tapestry of hospitality and design. With an illustrious 23-year
-            tenure in the hotel industry, Shehzarìn’s foray into the world of
-            weddings was a natural evolution, marked by her leadership in a
-            prominent wedding planning company.
+            Meet Shanaya, the creative force behind our extraordinary decor and
+            design endeavors. Imbued with an unbridled passion and a discerning
+            eye for perfection, Shanaya has immersed herself in the art of decor
+            since 2017. Her journey, which commenced at a young age, has evolved
+            into a testament of unwavering dedication and unparalleled
+            creativity. Breathing life into spaces with an innate sense of
+            style, she has curated breathtaking designs that have graced
+            significant weddings.
           </p>
           <p>
-            A maestro of perfectionism, Shehzarìn’s innate ability to
-            orchestrate flawless celebrations prompted her to establish her own
-            wedding planning venture. Her commitment to excellence and precision
-            shines through every event she touches.
+            With an extensive background and an artistic prowess, Shanaya brings
+            a unique blend of experience and youthful innovation to elevate your
+            events to the pinnacle of elegance. Welcome to a world where each
+            detail is meticulously crafted to reflect your distinct vision.
           </p>
         </div>
         <div className="our-story-image">
-          <img src="/images/wedding1.png" alt="Shehzarìn and Shanaya" />
+          <img src="/images/aboutus/about2.jpg" alt="Shehzarìn and Shanaya" />
         </div>
       </div>
       {/* Team Section */}
@@ -64,106 +192,150 @@ const About = () => {
 
         <div className="team-text-container">
           <p>
-            Complementing this seasoned matriarch is Shanaya the creative
-            luminary. A true aficionado of décor, she breathes life into spaces
-            with an unrivaled passion. A creative wonder child, Shanaya’s love
-            for design was nurtured at a young age, endowing her with a wealth
-            of experience that manifests in her meticulous attention to detail.
+            {" "}
+            Embark on a journey with the dynamic mother-daughter duo, Shehzarin
+            and Shanaya, whose collective expertise weaves an enchanting
+            tapestry of hospitality and design. With a rich and extensive
+            23-year background in the hotel industry, Shehzarin transitioned
+            seamlessly into the enchanting realm of wedding planning. Her
+            journey led her to spearhead the wedding vertical of a prominent
+            planning company, where her passion for creating unforgettable
+            moments flourished. Fueled by a deep understanding of hospitality
+            and an unwavering commitment to crafting seamless celebrations,
+            Shehzarin embarked on a new chapter, founding her own company to
+            bring distinct elegance and expertise to every wedding she touches.
           </p>
         </div>
         {/* Achievments Secton */}
-        <div className="achievements-section">
-          <div className="stats">
-            <div className="stat">
+        <div className="achievements-section" ref={statsRef}>
+          <motion.div
+            className="stats"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+          >
+            <motion.div className="stat" variants={itemVariants}>
+              {/* <p style={{ fontSize: "24px", color: "green" }}>Happiness</p> */}
+
               <h2>
-                250<span>+</span>
+                {counts.visits}
+                <span>+</span>
+              </h2>
+              <p>Smiles on clients face </p>
+            </motion.div>
+            <motion.div className="stat" variants={itemVariants}>
+              <h2>
+                {counts.couples}
+                <span>+</span>
               </h2>
               <p>Wedding Couples</p>
-            </div>
-            <div className="stat">
+            </motion.div>
+
+            <motion.div className="stat" variants={itemVariants}>
               <h2>
-                15<span>+</span>
+                {counts.members}
+                <span>+</span>
               </h2>
               <p>Expert Members</p>
-            </div>
-            <div className="stat">
+            </motion.div>
+
+            <motion.div className="stat" variants={itemVariants}>
               <h2>
-                90<span>%</span>
+                {counts.satisfaction}
+                <span>%</span>
               </h2>
               <p>Satisfaction Rate</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
+      {/* Hide it in above mobile */}
+      <div className="special-img">
+        <img src="/images/aboutus/about1.jpg" alt="" />
+      </div>
 
+      {/* Writeup Mid About */}
+      <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
+
+      {/* Writeup */}
+      <div>
+        <p className="end-writeup">
+          We don’t just plan weddings; we build emotions, memories, and moments
+          you’ll treasure for a lifetime. Your love story inspires everything we
+          create.
+        </p>
+      </div>
       {/* Video Section */}
       <section className="video-section">
         <div className="video-container">
-          <iframe
+          <video
+            ref={videoRef}
             className="responsive-iframe"
-            src="https://www.youtube.com/embed/tyBJioe8gOs?si=kmdXe3LKHKHbhdKz"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+            src="/video/videoaboutmain.mp4"
+            title="About Us Video"
+            autoPlay={false} // controlled via JavaScript
+            loop
+            // muted // Necessary for autoplay in most browsers
+            playsInline
+          />
         </div>
       </section>
 
-      {/* Why we different Section */}
-      <section className="different-from-others">
-        <h1 className="different-heading">Why are we different from others</h1>
-        <div className="different-section">
-          {/* 1 */}
-          <div className="service-card">
-            <div className="servicecard-img">
-              <img src={creative} alt="" />
-            </div>
-            <div className="servicecard-title">
-              <p>CREATIVE CONCEPT</p>
-            </div>
-            <div className="servicecard-desc">
-              <p>
-                Our wedding organizers bring your dream wedding concept to life
-                from thematic decorations to innovative layouts.
-              </p>
-            </div>
-          </div>
-          {/* 2 */}
-          <div className="service-card">
-            <div className="servicecard-img">
-              <img src={food} alt="" />
-            </div>
-            <div className="servicecard-title">
-              <p>PERFECT ATTIRE</p>
-            </div>
-            <div className="servicecard-desc">
-              <p>
-                Our wedding organizers bring your dream wedding concept to life
-                from thematic decorations to innovative layouts.
-              </p>
-            </div>
-          </div>
-          {/* 3 */}
-          <div className="service-card">
-            <div className="servicecard-img">
-              <img src={attire} alt="" />
-            </div>
-            <div className="servicecard-title">
-              <p>DELICIOUS FOODS</p>
-            </div>
-            <div className="servicecard-desc">
-              <p>
-                Our wedding organizers bring your dream wedding concept to life
-                from thematic decorations to innovative layouts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Writeup Mid About */}
+      <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
+
+      {/* Writeup */}
+      <div>
+        <p className="end-writeup">
+          We don’t just design weddings — we craft timeless memories, heartfelt
+          moments, and experiences you’ll cherish forever. Every detail we
+          create is inspired by your unique love story.
+        </p>
+      </div>
 
       {/* Achievement 2 section */}
       <section className="achievement-section">
+        <div className="achievements-container flex flex-col md:flex-row gap-8">
+          {/* Image Animation */}
+          <motion.div
+            className="achievements-image"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <img src={achievementsImage} alt="Wedding Achievement" />
+          </motion.div>
+
+          {/* Content Animation */}
+          <motion.div
+            className="achievements-content"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-semibold mb-4">Our Achievements</h2>
+            <table className="w-full text-left border-separate border-spacing-y-2">
+              <tbody>
+                {tableRows.map((row, index) => (
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <td className="pr-4 font-medium">{row.year}</td>
+                    <td>{row.title}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        </div>
+      </section>
+      {/* <section className="achievement-section">
         <div className="achievements-container">
           <div className="achievements-image">
             <img src={achievementsImage} alt="Wedding Achievement" />
@@ -173,8 +345,8 @@ const About = () => {
             <table>
               <tbody>
                 <tr>
-                  <td>2023</td>
-                  <td>Excellence in Event Planning</td>
+                  <td>2024</td>
+                  <td>Times applaud Trendsetters award</td>
                 </tr>
                 <tr>
                   <td>2023</td>
@@ -188,34 +360,36 @@ const About = () => {
             </table>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Writeup One */}
       <div>
-        <p className="about-writeup-one">
-          At Double S Enterprises , we don’t just design weddings we curate
-          unforgettable experiences. Every element, from exquisite mandaps and
-          lush floral arrangements to bespoke wedding favors, is thoughtfully
-          crafted to reflect your unique story.
+        <p className="end-writeup">
+          We don’t just plan weddings — we weave dreams into reality, turning
+          your love story into unforgettable moments and lasting memories. Every
+          celebration we create echoes the beauty of your journey together.
         </p>
       </div>
+
+      <div className="magaz">
+        <img src="/images/aboutus/aboutmagaz.jpg" alt="" />
+      </div>
       {/* Magazine */}
-      <div className="magazine-cover">
+      {/* <div className="magazine-cover">
         <img src={coverone} alt="" />
         <img src={covertwo} alt="" />
-      </div>
+      </div> */}
       {/* Writeup Two */}
       <div>
         <p className="about-writeup-one">
-          Embark on a journey with the dynamic mother-daughter duo, Shehzarin
-          and Shanaya, whose collective expertise weaves an enchanting tapestry
-          of hospitality and design. With an illustrious 23-year tenure in the
-          hotel industry, Shehzarin's foray into the world of weddings was a
-          natural evolution, marked by her leadership in a prominent wedding
-          planning company. A maestro of perfectionism, Shehzarin's innate
-          ability to orchestrate flawless celebrations prompted her to establish
-          her own wedding planning venture. Her commitment to excellence and
-          precision shines through every event she touches.
+          Together, Shehzarin and Shanaya form the heart and mind of our
+          company, where hospitality meets design, and every celebration
+          is a masterpiece. Complementing this seasoned matriarch is Shanaya the
+          creative luminary. A true aficionado of décor, she breathes life into
+          spaces with an unrivaled passion. A creative wonder child, Shanaya’s
+          love for design was nurtured at a young age, endowing her with a
+          wealth of experience that manifests in her meticulous attention to
+          detail.
         </p>
       </div>
       {/* Our Founders */}
@@ -233,7 +407,6 @@ const About = () => {
                 />
               </div>
               <div className="member-info">
-                <p className="role">{member.role}</p>
                 <p className="name">{member.name}</p>
               </div>
             </div>
@@ -242,20 +415,36 @@ const About = () => {
       </section>
 
       {/* Ending */}
-      <section>
-        <h6 className="ending-heading">
-          Your dream. Our expertise. A celebration like no other.
-        </h6>
-        <div className="ending">
-          <div>
-            <img src="/images/aboutus/ending1.png" alt="" />
+      <div className="contact-container">
+        <h1>Contact Us</h1>
+        <p className="tagline">
+          Reach out to <strong>Double S Enterprises</strong> today to schedule a
+          consultation.
+        </p>
+
+        <div className="contact-info">
+          <div className="info-box">
+            <label>Email:</label>
+            <a href="mailto:shanaya@double-s.in">shanaya@double-s.in</a>
           </div>
-          <div className="ending-small">
-            <img src="/images/aboutus/ending2.png" alt="" />
-            <img src="/images/aboutus/ending3.png" alt="" />
+
+          <div className="info-box">
+            <label>Phone:</label>
+            <a href="tel:9833568957">9833568957</a>
+          </div>
+
+          <div className="info-box">
+            <label>Instagram:</label>
+            <a
+              href="https://www.instagram.com/weddingsby_double_s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @weddingsby_double_s
+            </a>
           </div>
         </div>
-      </section>
+      </div>
       <Footer />
     </div>
   );

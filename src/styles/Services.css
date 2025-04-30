@@ -1,5 +1,5 @@
 .ourservices-banner {
-  background-image: url('/images/aboutus/aboutusbanner.png');
+  background-image: url('/images/services1.jpg');
   background-position: center;
   position: relative;
   display: flex;
@@ -8,7 +8,8 @@
   height: 300px;
 }
 
+.services-heading{
 
-.services-list{
-  display: flex;
+  padding: 0;
+  margin: 0;
 }

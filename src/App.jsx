@@ -7,6 +7,10 @@ import Services from "./pages/Services";
 import Plan from "./pages/plan";
 import Decor from "./pages/Decor";
 import Navbar from "./components/Navbar";
+import NikitaAndPhilippe from "./pages/NikitaAndPhilippe";
+import AnishaAndWill from "./pages/AnishaAndWill";
+import AishwaryaAndNikunj from "./pages/AishwaryaAndNikunj";
+import VeeraliAndMichale from "./pages/VeeraliAndMichale";
 
 const App = () => {
   return (
@@ -19,6 +23,10 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/plan" element={<Plan />} />
           <Route path="/decor" element={<Decor />} />
+          <Route path="/NikitaAndPhilippe" element={<NikitaAndPhilippe />} />
+          <Route path="/AnishaAndWill" element={<AnishaAndWill />} />
+          <Route path="/AishwaryaAndNikunj" element={<AishwaryaAndNikunj />} />
+          <Route path="/VeeraliAndMichale" element={<VeeraliAndMichale />} />
         </Routes>
       </div>
     </>
