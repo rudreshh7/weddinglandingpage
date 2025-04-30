@@ -52,15 +52,15 @@
 /* Responsive Styling */
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
-  }
-
-  .hero-text-area p {
     font-size: 1rem;
   }
 
+  .hero-text-area p {
+    font-size: 0.5rem;
+  }
+
   .hero-text-area button {
-    padding: 0.5rem 1rem;
+    display: none;
   }
 }
 
@@ -87,10 +87,7 @@
     
   }
   
-.hero-text-area{
-  display: none;
- 
-}
+
 
 }
 
