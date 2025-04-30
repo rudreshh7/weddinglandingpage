@@ -16,19 +16,6 @@
  
 }
 
-/* .title {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: white;
-  text-shadow:0.5px 0.5px 0.5px black;
-  text-align: center;
-  width: 100%;
-  padding: 1rem;
-} */
 
 
 .hero-text-area{
@@ -39,15 +26,6 @@
   color: white;
   text-shadow: 0.5px 0.5px 1.5px black;
 }
-/* .hero-text-area{
-  position:absolute ;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-align: center;
-  color: white;
-  text-shadow: 0.5px 0.5px 1.5px black;
-} */
 
 .hero-text-area p{
   font-size: 1.5rem;

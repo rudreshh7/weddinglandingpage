@@ -59,10 +59,7 @@ const Home = () => {
         </div>
         <div className="venue-content">
           <h2>Why Choose Double S Enterprises?</h2>
-          <p>
-            At Double S Enterprises, we turn your dreams into reality with
-            creativity, passion, and precision.
-          </p>
+
           <ul>
             <li>
               • Tailored to You: Every event is uniquely designed to reflect
@@ -85,7 +82,6 @@ const Home = () => {
               excellence to every celebration.
             </li>
           </ul>
-          <p>With us, your dream day is in trusted hands.</p>
         </div>
       </div>
       {/* Image Carousel */}
