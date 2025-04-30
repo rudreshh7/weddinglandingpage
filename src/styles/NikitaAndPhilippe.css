@@ -114,3 +114,120 @@
   height: 300px; /* Fixed height for consistency */
   object-fit: cover; /* Maintains aspect ratio */
 }
+
+
+/* ======= RESPONSIVE DESIGN ======= */
+
+/* For tablets and smaller (≤ 1024px) */
+@media screen and (max-width: 1024px) {
+  .story-blog {
+    max-width: 80%;
+    padding-top: 2rem;
+  }
+
+  .story-divider img {
+    width: 100%;
+  }
+
+  .large-gallery-container img {
+    width: 80%;
+  }
+
+  .small-gallery-container img {
+    width: 45%;
+    height: 250px;
+  }
+
+  .quad-gallery-container {
+    max-width: 90%;
+    grid-template-columns: 1fr 1fr; /* still 2 columns but less width */
+  }
+
+  .quad-gallery-container img {
+    height: 250px;
+  }
+}
+
+/* For large phones and small tablets (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .story-heading {
+    padding: 2rem;
+  }
+
+  .stories-heading-section {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .story-blog {
+    max-width: 90%;
+    padding-top: 2rem;
+  }
+
+  .story-divider {
+    padding: 1rem;
+  }
+
+  .story-divider img {
+    width: 100%;
+  }
+
+  .large-gallery-container img {
+    width: 100%;
+  }
+
+  .small-gallery-container {
+    flex-wrap: wrap;
+  }
+
+  .small-gallery-container img {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
+  .quad-gallery-container {
+    grid-template-columns: 1fr; /* Stack images vertically */
+  }
+
+  .quad-gallery-container img {
+    height: auto;
+  }
+
+  .cute-writeup h6 {
+    font-size: 1.5rem;
+  }
+
+  .cute-writeup p {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
+
+/* For small phones (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .story-heading {
+    padding: 1rem;
+  }
+
+  .stories-heading-section {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .story-heading h6 {
+    font-size: 0.9rem;
+  }
+
+  .story-blog p {
+    font-size: 0.9rem;
+  }
+
+  .cute-writeup h6 {
+    font-size: 1.2rem;
+  }
+
+  .cute-writeup p {
+    font-size: 0.8rem;
+  }
+}
