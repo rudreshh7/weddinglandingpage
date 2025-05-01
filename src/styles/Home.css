@@ -93,6 +93,33 @@
 
 }
 
+ /* sERVICE CRD */
+/* sERVICE CRD */
+
+.venue-card {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: 2rem auto 0;
+  overflow: hidden;
+}
+
+.venue-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.venue-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* CONTENT STYLING */
 .venue-content {
   position: absolute;
@@ -124,89 +151,4 @@
   line-height: 1.4;
   color: #8C916C;
   margin-bottom: 10px;
-}
-
-/* ---------------------------- */
-/* RESPONSIVENESS (TABLETS) */
-/* ---------------------------- */
-@media (max-width: 1024px) {
-  .venue-card {
-    flex-direction: row-reverse;
-    height: auto;
-    min-height: 500px;
-  }
-
-  .venue-image,
-  .venue-content {
-    position: relative;
-    width: 50%;
-    height: auto;
-  }
-
-  .venue-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .venue-content {
-    padding: 25px;
-    justify-content: flex-start;
-    overflow-y: auto;
-    max-height: 500px;
-  }
-
-  .venue-content h2 {
-    font-size: 18px;
-  }
-
-  .venue-content p,
-  .venue-content li {
-    font-size: 13px;
-  }
-}
-
-/* ---------------------------- */
-/* iOS / Mobiles (CREATIVE) */
-/* ---------------------------- */
-@media (max-width: 768px) {
-  .venue-card {
-    position: relative;
-    flex-direction: column;
-    height: auto;
-    min-height: 400px;
-  }
-
-  .venue-image {
-    width: 100%;
-    height: 250px;
-    position: relative;
-  }
-
-  .venue-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(80%);
-  }
-
-  .venue-content {
-    width: 85%;
-    margin: -60px auto 0 auto; /* Overlap effect */
-    background-color: rgba(245, 244, 225, 0.95); /* Semi-transparent */
-    /* border-radius: 15px; */
-    /* box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
-    padding: 20px;
-    position: relative;
-    z-index: 3;
-  }
-
-  .venue-content h2 {
-    font-size: 16px;
-  }
-
-  .venue-content p,
-  .venue-content li {
-    font-size: 12px;
-  }
 }
