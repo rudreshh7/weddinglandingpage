@@ -93,36 +93,7 @@
 
 }
 
-
-
-/* sERVICE CRD */
-
-.venue-card {
-  position: relative;
-  width: 100%;
-  max-width: 800px; /* Adjust as needed */
-  height: 400px; /* Set a fixed height or use aspect-ratio */
-  margin: 0 auto;
-  display: flex;
-  overflow: hidden;
-  margin-top: 2rem;
-}
-
-.venue-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 60%;
-  overflow: hidden;
-}
-
-.venue-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/* CONTENT STYLING */
 .venue-content {
   position: absolute;
   right: 0;
@@ -130,12 +101,14 @@
   width: 70%;
   height: 90%;
   background-color: #f5f4e1;
-  padding: 30px;
-  padding-inline: 40px;
+  padding: 30px 40px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .venue-content h2 {
@@ -143,33 +116,97 @@
   margin-bottom: 15px;
   color: #8C916C;
   text-transform: uppercase;
-  /* font-family: "Cinzel", serif; */
-
 }
 
-.venue-content p {
-  font-size: 14px;
-  line-height: 0.8;
-  color: #8C916C;
-  margin-bottom: 20px;
-}
+.venue-content p,
 .venue-content li {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #8C916C;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
+/* ---------------------------- */
+/* RESPONSIVENESS (TABLETS) */
+/* ---------------------------- */
+@media (max-width: 1024px) {
+  .venue-card {
+    flex-direction: row-reverse;
+    height: auto;
+    min-height: 500px;
+  }
 
+  .venue-image,
+  .venue-content {
+    position: relative;
+    width: 50%;
+    height: auto;
+  }
 
-@media (max-width: 768px) {
-
-  .venue-image {
-    order: 2;
+  .venue-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .venue-content {
-    order: 1;
+    padding: 25px;
+    justify-content: flex-start;
+    overflow-y: auto;
+    max-height: 500px;
   }
 
+  .venue-content h2 {
+    font-size: 18px;
+  }
+
+  .venue-content p,
+  .venue-content li {
+    font-size: 13px;
+  }
+}
+
+/* ---------------------------- */
+/* iOS / Mobiles (CREATIVE) */
+/* ---------------------------- */
+@media (max-width: 768px) {
+  .venue-card {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .venue-image {
+    width: 100%;
+    height: 250px;
+    position: relative;
+  }
+
+  .venue-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%);
+  }
+
+  .venue-content {
+    width: 85%;
+    margin: -60px auto 0 auto; /* Overlap effect */
+    background-color: rgba(245, 244, 225, 0.95); /* Semi-transparent */
+    /* border-radius: 15px; */
+    /* box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
+    padding: 20px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .venue-content h2 {
+    font-size: 16px;
+  }
+
+  .venue-content p,
+  .venue-content li {
+    font-size: 12px;
+  }
 }

@@ -10,26 +10,64 @@
   font-size: larger;
 }
 
-.intro-plan-large{
+.intro-plan-large {
   display: flex;
   margin: 0 auto;
+  flex-wrap: wrap; /* allow images to wrap on smaller screens */
 }
 
-.intro-plan-large img{
-  width:99%;
+.intro-plan-large img {
+  width: 99%;
   margin: 0 auto;
   padding: 2rem;
+  box-sizing: border-box; /* ensure padding doesn't mess width */
 }
 
-.intro-plan-small{
+.intro-plan-small {
   display: flex;
   gap: 2rem;
   justify-content: center;
+  flex-wrap: wrap; /* allows images to stack nicely if screen is narrow */
 }
-.intro-plan-small img{
-  width:350px;
 
+.intro-plan-small img {
+  width: 350px;
+  max-width: 100%; /* ensures image doesn't overflow on smaller screens */
+  height: auto; /* keeps image aspect ratio intact */
 }
+
+/* MOBILE RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .intro-plan-large {
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+  }
+
+  .intro-plan-large img {
+    width: 90%; /* smaller width to fit mobile nicely */
+    padding: 1rem;
+  }
+
+  .intro-plan-small {
+    flex-direction: column; /* stack images vertically */
+    gap: 1rem; /* smaller gap on mobile */
+  }
+
+  .intro-plan-small img {
+    width: 90%; /* fit nicely on mobile screens */
+    padding: 0.5rem;
+  }
+}
+
+/* Extra small screens (iPhone SE, small Androids) */
+@media (max-width: 480px) {
+  .intro-plan-large img,
+  .intro-plan-small img {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
 
 .bell-divider {
   display: flex;
