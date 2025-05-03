@@ -609,14 +609,66 @@
   font-family: 'Georgia', serif;
 }
 
-.founder-heading{
- 
+.founder-heading {
   font-size: x-large;
   text-align: center;
   padding: 2rem;
   color: #8C916C;
-
 }
+
+/* -------------------- Responsive Styles -------------------- */
+@media (max-width: 768px) {
+  .team-container {
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: nowrap; /* Keep them in one row */
+    overflow-x: auto; /* Allow scrolling if too wide */
+  }
+
+  .image-container {
+    width: 150px;
+    height: 180px;
+  }
+
+  .image-container::before {
+    width: 180px;
+    height: 180px;
+  }
+
+  .member-info {
+    margin-top: 1rem;
+  }
+
+  .role {
+    font-size: 0.85rem;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+}
+
+/* Optional — Even smaller screens (extra safety) */
+@media (max-width: 480px) {
+  .image-container {
+    width: 120px;
+    height: 150px;
+  }
+
+  .image-container::before {
+    width: 150px;
+    height: 150px;
+  }
+
+  .role {
+    font-size: 0.75rem;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+}
+
 .ending-heading{
   font-size: x-large;
   text-align: center;

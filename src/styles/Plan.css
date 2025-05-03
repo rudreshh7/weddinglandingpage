@@ -187,25 +187,34 @@
 }
 
 /* Services */
-
 .services-section {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   gap: 50px;
   padding: 50px 20px;
-  background-color: #fff; /* or very light cream if you want */
+  background-color: #fff;
+  flex-wrap: wrap; /* wrap on smaller screens */
 }
 
-.service-card {
-  text-align: center;
+/* New wrapper to pair card + image */
+.service-card-with-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 300px;
+  text-align: center;
+}
+
+/* You already had this — reused it */
+.service-card {
+  margin-bottom: 20px;
 }
 
 .service-card h2 {
   font-size: 20px;
   letter-spacing: 1px;
-  color: #7A7A52; /* soft olive/brownish color */
+  color: #7A7A52;
   margin-bottom: 20px;
 }
 
@@ -215,37 +224,14 @@
   line-height: 1.6;
 }
 
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .services-section {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Plan end Images */
-.gallery-container {
-  display: flex;
-  flex-direction: row; /* keep it row-wise */
-  justify-content:center;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  overflow-x: auto; /* allow scroll if images overflow */
-  white-space: nowrap;
-}
-
+/* Image styling — reused but fine-tuned */
 .image-wrapper {
-  flex: 0 0 auto; /* don't allow it to shrink */
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-}
-
-.image-wrapper:hover {
-  transform: scale(1.05);
+  width: 100%;
 }
 
 .image-wrapper img {
@@ -253,6 +239,22 @@
   height: auto;
   max-width: 300px;
   display: block;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .services-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card-with-image {
+    max-width: 90%;
+  }
 }
 
 

@@ -7,6 +7,25 @@ const Plan = () => {
     "/images/plan/planend2.jpg",
     "/images/plan/planend3.jpg",
   ];
+
+  const services = [
+    {
+      title: "CONSULTATION",
+      description:
+        "From your very first vision board to tailored vendor suggestions, our consultation sessions craft a personalized blueprint for your perfect day turning your dreams into a detailed plan.",
+    },
+    {
+      title: "COORDINATION",
+      description:
+        "On the big day, our expert coordinators seamlessly connect every dot synchronizing vendors, guests, and schedules so that you simply bask in the joy without worrying about the details.",
+    },
+    {
+      title: "EXECUTION",
+      description:
+        "Watch your vision unfold flawlessly as our team orchestrates every element, from the grand entrance to the final toast ensuring an effortless, unforgettable celebration.",
+    },
+  ];
+
   return (
     <div>
       {" "}
@@ -104,38 +123,16 @@ const Plan = () => {
           <img src="/images/plan/workprocess.jpg" alt="Wedding Dance" />
         </div>
       </section>
-      {/* Last Plan  */}
       <div className="services-section">
-        <div className="service-card">
-          <h2>CONSULTATION</h2>
-          <p>
-            From your very first vision board to tailored vendor suggestions,
-            our consultation sessions craft a personalized blueprint for your
-            perfect day turning your dreams into a detailed plan.
-          </p>
-        </div>
-        <div className="service-card">
-          <h2>COORDINATION</h2>
-          <p>
-            On the big day, our expert coordinators seamlessly connect every dot
-            synchronizing vendors, guests, and schedules so that you simply bask
-            in the joy without worrying about the details.
-          </p>
-        </div>
-        <div className="service-card">
-          <h2>EXECUTION</h2>
-          <p>
-            Watch your vision unfold flawlessly as our team orchestrates every
-            element, from the grand entrance to the final toast ensuring an
-            effortless, unforgettable celebration.
-          </p>
-        </div>
-      </div>
-      {/* End Images Plan */}
-      <div className="gallery-container">
-        {images.map((src, index) => (
-          <div className="image-wrapper" key={index}>
-            <img src={src} alt={`Flower Arrangement ${index + 1}`} />
+        {services.map((service, index) => (
+          <div className="service-card-with-image" key={index}>
+            <div className="service-card">
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+            </div>
+            <div className="image-wrapper">
+              <img src={images[index]} alt={`${service.title} Image`} />
+            </div>
           </div>
         ))}
       </div>
