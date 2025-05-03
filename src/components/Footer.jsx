@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-top">
         <div className="footer-branding">
           <h2>DOUBLE S ENTERPRISES</h2>
-          <p>WE ARE HERE TO MAKE YOUR DREAM WEDDING A ULTIMATE REALITY</p>
+          <p>WE ARE HERE TO MAKE YOUR DREAM WEDDING A ULTIMATE REALITY.</p>
         </div>
         <div className="footer-sections">
           <div className="footer-column">

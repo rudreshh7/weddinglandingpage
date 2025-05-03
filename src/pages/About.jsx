@@ -260,9 +260,17 @@ const About = () => {
       {/* Writeup */}
       <div>
         <p className="end-writeup">
-          We don’t just plan weddings; we build emotions, memories, and moments
-          you’ll treasure for a lifetime. Your love story inspires everything we
-          create.
+          With a rich and extensive 23-year background in the hotel industry,
+          Shehzarin transitioned seamlessly into the enchanting realm of wedding
+          planning. Her journey led her to spearhead the wedding vertical of a
+          prominent planning company, where her passion for creating
+          unforgettable moments flourished. Fueled by a deep understanding of
+          hospitality and an unwavering commitment to crafting seamless
+          celebrations, Shehzarin embarked on a new chapter, founding her own
+          company to bring distinct elegance and expertise to every wedding she
+          touches. Welcome to a world where experience meets innovation, curated
+          by a seasoned professional dedicated to turning your dream wedding
+          into a timeless reality.
         </p>
       </div>
       {/* Video Section */}
@@ -283,15 +291,6 @@ const About = () => {
 
       {/* Writeup Mid About */}
       <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
-
-      {/* Writeup */}
-      <div>
-        <p className="end-writeup">
-          We don’t just design weddings — we craft timeless memories, heartfelt
-          moments, and experiences you’ll cherish forever. Every detail we
-          create is inspired by your unique love story.
-        </p>
-      </div>
 
       {/* Achievement 2 section */}
       <section className="achievement-section">
