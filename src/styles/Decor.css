@@ -115,7 +115,6 @@
   height: auto;
 }
 
-/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -130,14 +129,24 @@
   border-radius: 8px;
 }
 
-.gallery-heading{
+.gallery-heading {
   font-size: xx-large;
   text-align: center;
   padding: 2rem;
   color: #8C916C;
   /* font-family: "Great Vibes", cursive; */
+}
 
+/* --- Make 2 square images on mobile --- */
+@media screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  .gallery img {
+    aspect-ratio: 1 / 1; /* THIS makes it square */
+    height: auto;        /* Remove fixed height */
+  }
 }
 
 
@@ -192,13 +201,6 @@
     font-size: 1.3rem;
   }
 
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery img {
-    height: 150px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -211,11 +213,5 @@
     margin: 1rem auto;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
-  }
 
-  .gallery img {
-    height: 200px;
-  }
 }

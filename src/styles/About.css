@@ -51,6 +51,9 @@
 .our-story-text {
   flex: 1;
   min-width: 300px;
+  color: #6a704c;
+
+
 }
 
 .our-story-text h2 {

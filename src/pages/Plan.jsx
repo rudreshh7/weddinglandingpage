@@ -20,11 +20,11 @@ const Plan = () => {
         <div class="vertical-line"></div>
 
         <p class="founder-heading">
-          WITH YEARS OF EXPERTISE IN WEDDING PLANNING, WE DEDICATED TO CREATING
-          BEAUTIFULLY ORCHESTRATED EXPERIENCES.
+          WITH YEARS OF EXPERTISE IN WEDDING PLANNING, WE ARE DEDICATED TO
+          CREATING BEAUTIFULLY ORCHESTRATED EXPERIENCES
         </p>
         <p class="founder-description">
-          At Double S Enterprises, we don’t just design weddings — we curate
+          At Double S Enterprises, we don’t just design weddings, we curate
           unforgettable experiences. Every element, from exquisite mandaps and
           lush floral arrangements to bespoke wedding favors, is thoughtfully
           crafted to reflect your unique story.
@@ -42,6 +42,11 @@ const Plan = () => {
         </div>
       </div>
       {/* Writeup */}
+      <div className="only-mobile-plan">
+        <img src="/images/plan/plan2.jpg" alt="" />
+        <img src="/images/plan/plan3.jpg" alt="" />
+        <img src="/images/plan/plan4.jpg" alt="" />
+      </div>
       <div>
         <p className="plan-writeup">
           We are true romantics at heart. We know when it comes to the matter of
@@ -94,7 +99,7 @@ const Plan = () => {
           into a timeless reality.
         </p>
       </div>
-      {/* Our Work Process */}\
+      {/* Our Work Process */}
       <section className="work-process-section">
         <div className="work-process-text">
           <h2>Our Work Process</h2>
@@ -114,22 +119,22 @@ const Plan = () => {
           <p>
             From your very first vision board to tailored vendor suggestions,
             our consultation sessions craft a personalized blueprint for your
-            perfect day — turning your dreams into a detailed plan.
+            perfect day turning your dreams into a detailed plan.
           </p>
         </div>
         <div className="service-card">
           <h2>COORDINATION</h2>
           <p>
             On the big day, our expert coordinators seamlessly connect every dot
-            — synchronizing vendors, guests, and schedules so that you simply
-            bask in the joy without worrying about the details.
+            synchronizing vendors, guests, and schedules so that you simply bask
+            in the joy without worrying about the details.
           </p>
         </div>
         <div className="service-card">
           <h2>EXECUTION</h2>
           <p>
             Watch your vision unfold flawlessly as our team orchestrates every
-            element, from the grand entrance to the final toast — ensuring an
+            element, from the grand entrance to the final toast ensuring an
             effortless, unforgettable celebration.
           </p>
         </div>

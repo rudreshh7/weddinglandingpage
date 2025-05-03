@@ -36,8 +36,25 @@
   height: auto; /* keeps image aspect ratio intact */
 }
 
+.only-mobile-plan{
+  display: none;
+}
+
 /* MOBILE RESPONSIVE STYLES */
 @media (max-width: 768px) {
+
+  .only-mobile-plan{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+
+  }
+
+  .only-mobile-plan img{
+    /* display: none; */
+    width: 100px;
+  }
   .intro-plan-large {
     flex-direction: column; /* stack vertically */
     align-items: center;
@@ -49,6 +66,7 @@
   }
 
   .intro-plan-small {
+    display: none;
     flex-direction: column; /* stack images vertically */
     gap: 1rem; /* smaller gap on mobile */
   }
