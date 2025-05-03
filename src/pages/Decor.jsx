@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import "../styles/Decor.css";
 const Decor = () => {
   const images = Array.from(
-    { length: 45 },
+    { length: 46 },
     (_, index) => `/images/gallery/g${index + 1}.jpg`
   );
 
