@@ -293,45 +293,26 @@ const About = () => {
       <img className="flower-blend" src="Flower.svg" alt="Decorative Flower" />
 
       {/* Achievement 2 section */}
-      <section className="achievement-section">
-        <div className="achievements-container flex flex-col md:flex-row gap-8">
-          {/* Image Animation */}
-          <motion.div
-            className="achievements-image"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <img src={achievementsImage} alt="Wedding Achievement" />
-          </motion.div>
 
-          {/* Content Animation */}
-          <motion.div
-            className="achievements-content"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-semibold mb-4">Our Achievements</h2>
-            <table className="w-full text-left border-separate border-spacing-y-2">
-              <tbody>
-                {tableRows.map((row, index) => (
-                  <motion.tr
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <td className="pr-4 font-medium">{row.year}</td>
-                    <td>{row.title}</td>
-                  </motion.tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
+      {/* Our Founders */}
+      <section className="our-founders">
+        <h6 className="founder-heading">Our Founders</h6>
+
+        <div className="team-container">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="team-member">
+              <div className="image-container">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="profile-image"
+                />
+              </div>
+              <div className="member-info">
+                <p className="name">{member.name}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       {/* <section className="achievement-section">
@@ -391,25 +372,46 @@ const About = () => {
           detail.
         </p>
       </div>
-      {/* Our Founders */}
-      <section className="our-founders">
-        <h6 className="founder-heading">Our Founders</h6>
 
-        <div className="team-container">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="team-member">
-              <div className="image-container">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="profile-image"
-                />
-              </div>
-              <div className="member-info">
-                <p className="name">{member.name}</p>
-              </div>
-            </div>
-          ))}
+      <section className="achievement-section">
+        <div className="achievements-container flex flex-col md:flex-row gap-8">
+          {/* Image Animation */}
+          <motion.div
+            className="achievements-image"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <img src={achievementsImage} alt="Wedding Achievement" />
+          </motion.div>
+
+          {/* Content Animation */}
+          <motion.div
+            className="achievements-content"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-semibold mb-4">Our Achievements</h2>
+            <table className="w-full text-left border-separate border-spacing-y-2">
+              <tbody>
+                {tableRows.map((row, index) => (
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <td className="pr-4 font-medium">{row.year}</td>
+                    <td>{row.title}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
         </div>
       </section>
 
