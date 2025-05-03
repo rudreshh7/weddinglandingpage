@@ -63,6 +63,51 @@
   }
 }
 
+/* Mobile layout specific styles */
+.mobile-stories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-story-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  /* background-color: #f9f9f9; */
+  padding: 0.75rem;
+  /* border-radius: 12px; */
+  cursor: pointer;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.mobile-story-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mobile-story-text h3 {
+  font-size: 1rem;
+  color: #8C916C;
+  margin: 0;
+}
+
+.mobile-story-text p {
+  font-size: 0.75rem;
+  color: #8C916C;
+  margin: 0.25rem 0 0 0;
+}
+
+/* Ensure desktop layout stays untouched */
+@media screen and (min-width: 769px) {
+  .mobile-stories-container {
+    display: none;
+  }
+}
+
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
   .selected-story {
