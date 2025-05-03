@@ -298,6 +298,39 @@
   border: none;
 }
 
+
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .video-section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Phones (portrait and landscape) */
+@media (max-width: 768px) {
+  .video-section {
+    padding: 3rem 1rem;
+  }
+
+  .video-container {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Small phones (like iPhone SE, older Android) */
+@media (max-width: 480px) {
+  .video-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .video-container {
+    padding-top: 56.25%; /* still 16:9 ratio */
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+}
 /* Why we different section */
 
 .different-section{
