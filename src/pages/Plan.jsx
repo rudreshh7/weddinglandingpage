@@ -107,7 +107,7 @@ const Plan = () => {
         <p className="mid-writeup">
           We don’t just design weddings we craft timeless memories, heartfelt
           moments, and experiences you’ll cherish forever. Every detail we
-          create is inspired by your unique love story.s
+          create is inspired by your unique love story.
         </p>
       </div>
       {/* Our Work Process */}
